@@ -1,1 +1,16 @@
+Figure1:
+DESC="KDName G6865 KDInedx 3365 KDfact 1" WC_ANALYZE_FAST=1 \
+VARIANT="geneKnockdown" FIRST_VARIANT_INDEX=3365 LAST_VARIANT_INDEX=3365 \
+CACHED_SIM_DATA=1 PARALLEL_PARCA=1 \
+SINGLE_DAUGHTERS=0 N_GENS=6 N_INIT_SIMS=4 TIMESTEP_MAX=2.5 TIMESTEP_SAFETY_FRAC=2 TIMESTEP_UPDATE_FREQ=3 \
+MASS_DISTRIBUTION=1 GROWTH_RATE_NOISE=1 D_PERIOD_DIVISION=1 \
+LAUNCHPAD_FILE='/newhome/wo20754/wholecell3/wcEcoli/wholecell/fireworks/my_launchpad.yaml' \
+python /newhome/wo20754/wholecell3/wcEcoli/runscripts/fireworks/fw_queue.py
 
+Figure1 A: /newhome/wo20754/wholecell3/wcEcoli/out/20210416.130539__KDName_G6858_KDIndex_3365_KDfact_1/geneKnockdown_003365/000000/generation_000000/000000/plotOut/metabolites.pdf
+Figure1 B: /newhome/wo20754/wholecell3/wcEcoli/out/20210416.130539__KDName_G6858_KDIndex_3365_KDfact_1/geneKnockdown_003365/000000/generation_000001/000000/plotOut/metabolites.pdf
+Figure1 C: /newhome/wo20754/wholecell3/wcEcoli/out/20210416.130539__KDName_G6858_KDIndex_3365_KDfact_1/geneKnockdown_003365/000000/generation_000002/000000/plotOut/metabolites.pdf
+Figure1 D: /newhome/wo20754/wholecell3/wcEcoli/out/20210416.130539__KDName_G6858_KDIndex_3365_KDfact_1/geneKnockdown_003365/000000/generation_000003/000000/plotOut/metabolites.pdf
+
+Figure2:
+Clone the code in this 
