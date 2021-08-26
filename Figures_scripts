@@ -1,3 +1,5 @@
+When you are running these code, you need to change the path to your own path.
+
 Figure1:
 DESC="KDName G6865 KDInedx 3365 KDfact 1" WC_ANALYZE_FAST=1 \
 VARIANT="geneKnockdown" FIRST_VARIANT_INDEX=3365 LAST_VARIANT_INDEX=3365 \
@@ -13,4 +15,121 @@ Figure1 C: /newhome/wo20754/wholecell3/wcEcoli/out/20210416.130539__KDName_G6858
 Figure1 D: /newhome/wo20754/wholecell3/wcEcoli/out/20210416.130539__KDName_G6858_KDIndex_3365_KDfact_1/geneKnockdown_003365/000000/generation_000003/000000/plotOut/metabolites.pdf
 
 Figure2:
-Clone the code in this 
+Clone the code in this respository: https://github.com/Shancloud/E.coli_wholecellmodel.git/Runningfile/ to your E.coli model.
+Then using the output you get in the figure1 simulation and the code in Runningfile to plot the figure. Following is the detailed scripts.
+python run.py /newhome/wo20754/wholecell3/wcEcoli/out/20210416.130539__KDName_G6858_KDIndex_3365_KDfact_1/geneKnockdown_003365/000000/generation_000000/000000/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/20210416.130539__KDName_G6858_KDIndex_3365_KDfact_1/geneKnockdown_003365/000000/generation_000001/000000/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/20210416.130539__KDName_G6858_KDIndex_3365_KDfact_1/geneKnockdown_003365/000000/generation_000002/000000/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/20210416.130539__KDName_G6858_KDIndex_3365_KDfact_1/geneKnockdown_003365/000000/generation_000003/000000/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/project/exportpath/G6858_3365_4generation/
+
+Then you will get figure2: 
+/newhome/wo20754/wholecell3/wcEcoli/out/project/exportpath/G6858_3365_4generation/metabolites.pdf
+
+Figure3:
+DESC="wildtype_report" WC_ANALYZE_FAST=1 \
+VARIANT="wildtype" FIRST_VARIANT_INDEX=0 LAST_VARIANT_INDEX=0 \
+CACHED_SIM_DATA=1 PARALLEL_PARCA=1 \
+SINGLE_DAUGHTERS=0 N_GENS=6 N_INIT_SIMS=4 TIMESTEP_MAX=2.5 TIMESTEP_SAFETY_FRAC=2 TIMESTEP_UPDATE_FREQ=3 \
+MASS_DISTRIBUTION=1 GROWTH_RATE_NOISE=1 D_PERIOD_DIVISION=1 \
+LAUNCHPAD_FILE='/newhome/wo20754/wholecell3/wcEcoli/wholecell/fireworks/my_launchpad.yaml' \
+python /newhome/wo20754/wholecell3/wcEcoli/runscripts/fireworks/fw_queue.py
+
+Clone the code in this respository: https://github.com/Shancloud/E.coli_wholecellmodel.git/Runningfile/ to your E.coli model.
+Then using the outputs you get in the figure1 simulation and the code in Runningfile to plot the figure. Following is the detailed scripts.
+python run.py /newhome/wo20754/wholecell3/wcEcoli/out/20210823.152009__wildtype_reportVARIANT=wildtype/wildtype_000000/000000/generation_000000/000000/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/20210823.152009__wildtype_reportVARIANT=wildtype/wildtype_000000/000000/generation_000000/000001/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/20210823.152009__wildtype_reportVARIANT=wildtype/wildtype_000000/000000/generation_000000/000002/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/20210823.152009__wildtype_reportVARIANT=wildtype/wildtype_000000/000000/generation_000000/000003/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/project/exportpath/
+
+Then you will get figure3: 
+/newhome/wo20754/wholecell3/wcEcoli/out/project/exportpath/wildtype_4generation/metabolites.pdf
+
+Figure4:
+You need to use outputs got from figure1 and figure3. 
+The rest of the outputs are generated using the following parameters.
+
+DESC="KDName EG10032 KDInedx 43 KDfact 1" WC_ANALYZE_FAST=1 \
+VARIANT="geneKnockdown" FIRST_VARIANT_INDEX=43 LAST_VARIANT_INDEX=43 \
+CACHED_SIM_DATA=1 PARALLEL_PARCA=1 \
+SINGLE_DAUGHTERS=0 N_GENS=6 N_INIT_SIMS=4 TIMESTEP_MAX=2.5 TIMESTEP_SAFETY_FRAC=2 TIMESTEP_UPDATE_FREQ=3 \
+MASS_DISTRIBUTION=1 GROWTH_RATE_NOISE=1 D_PERIOD_DIVISION=1 \
+LAUNCHPAD_FILE='/newhome/wo20754/wholecell3/wcEcoli/wholecell/fireworks/my_launchpad.yaml' \
+python /newhome/wo20754/wholecell3/wcEcoli/runscripts/fireworks/fw_queue.py
+
+DESC="KDName EG10043 KDInedx 53 KDfact 1" WC_ANALYZE_FAST=1 \
+VARIANT="geneKnockdown" FIRST_VARIANT_INDEX=53 LAST_VARIANT_INDEX=53 \
+CACHED_SIM_DATA=1 PARALLEL_PARCA=1 \
+SINGLE_DAUGHTERS=0 N_GENS=6 N_INIT_SIMS=4 TIMESTEP_MAX=2.5 TIMESTEP_SAFETY_FRAC=2 TIMESTEP_UPDATE_FREQ=3 \
+MASS_DISTRIBUTION=1 GROWTH_RATE_NOISE=1 D_PERIOD_DIVISION=1 \
+LAUNCHPAD_FILE='/newhome/wo20754/wholecell3/wcEcoli/wholecell/fireworks/my_launchpad.yaml' \
+python /newhome/wo20754/wholecell3/wcEcoli/runscripts/fireworks/fw_queue.py
+
+DESC="KDName EG10063 KDInedx 73 KDfact 1" WC_ANALYZE_FAST=1 \
+VARIANT="geneKnockdown" FIRST_VARIANT_INDEX=73 LAST_VARIANT_INDEX=73 \
+CACHED_SIM_DATA=1 PARALLEL_PARCA=1 \
+SINGLE_DAUGHTERS=0 N_GENS=6 N_INIT_SIMS=4 TIMESTEP_MAX=2.5 TIMESTEP_SAFETY_FRAC=2 TIMESTEP_UPDATE_FREQ=3 \
+MASS_DISTRIBUTION=1 GROWTH_RATE_NOISE=1 D_PERIOD_DIVISION=1 \
+LAUNCHPAD_FILE='/newhome/wo20754/wholecell3/wcEcoli/wholecell/fireworks/my_launchpad.yaml' \
+python /newhome/wo20754/wholecell3/wcEcoli/runscripts/fireworks/fw_queue.py
+
+DESC="KDName EG10065 KDInedx 75 KDfact 1" WC_ANALYZE_FAST=1 \
+VARIANT="geneKnockdown" FIRST_VARIANT_INDEX=75 LAST_VARIANT_INDEX=75 \
+CACHED_SIM_DATA=1 PARALLEL_PARCA=1 \
+SINGLE_DAUGHTERS=0 N_GENS=6 N_INIT_SIMS=4 TIMESTEP_MAX=2.5 TIMESTEP_SAFETY_FRAC=2 TIMESTEP_UPDATE_FREQ=3 \
+MASS_DISTRIBUTION=1 GROWTH_RATE_NOISE=1 D_PERIOD_DIVISION=1 \
+LAUNCHPAD_FILE='/newhome/wo20754/wholecell3/wcEcoli/wholecell/fireworks/my_launchpad.yaml' \
+python /newhome/wo20754/wholecell3/wcEcoli/runscripts/fireworks/fw_queue.py
+
+DESC="KDName G6810 KDInedx 3317 KDfact 1" WC_ANALYZE_FAST=1 \
+VARIANT="geneKnockdown" FIRST_VARIANT_INDEX=3317 LAST_VARIANT_INDEX=3317 \
+CACHED_SIM_DATA=1 PARALLEL_PARCA=1 \
+SINGLE_DAUGHTERS=0 N_GENS=6 N_INIT_SIMS=4 TIMESTEP_MAX=2.5 TIMESTEP_SAFETY_FRAC=2 TIMESTEP_UPDATE_FREQ=3 \
+MASS_DISTRIBUTION=1 GROWTH_RATE_NOISE=1 D_PERIOD_DIVISION=1 \
+LAUNCHPAD_FILE='/newhome/wo20754/wholecell3/wcEcoli/wholecell/fireworks/my_launchpad.yaml' \
+python /newhome/wo20754/wholecell3/wcEcoli/runscripts/fireworks/fw_queue.py
+
+python run.py /newhome/wo20754/wholecell3/wcEcoli/out/20210823.152009__wildtype_reportVARIANT=wildtype/wildtype_000000/000000/generation_000003/000000/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/20210328.192750__KDName_EG10032_KDIndex_43_KDfact_1/geneKnockdown_000043/000000/generation_000003/000000/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/20210328.192755__KDName_EG10043_KDIndex_53_KDfact_1/geneKnockdown_000053/000000/generation_000003/000000/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/20210328.192759__KDName_EG10063_KDIndex_73_KDfact_1/geneKnockdown_000073/000000/generation_000003/000000/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/20210328.192807__KDName_EG10065_KDIndex_75_KDfact_1/geneKnockdown_000075/000000/generation_000000/000000/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/20210416.130535__KDName_G6810_KDIndex_3317_KDfact_1/geneKnockdown_003317/000000/generation_000003/000000/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/20210416.130539__KDName_G6858_KDIndex_3365_KDfact_1/geneKnockdown_003365/000000/generation_000003/000000/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/project/exportpath/wildtype_knockdown/
+
+Then you will get figure4:
+/newhome/wo20754/wholecell3/wcEcoli/out/project/exportpath/wildtype_knockdown/aaCounts.pdf
+
+Figure5:
+Using the outputs you get in the figure1 simulation.
+using the outputs you get in the figure4 simulation (DESC="wildtype_report").
+
+python run.py /newhome/wo20754/wholecell3/wcEcoli/out/20210823.152009__wildtype_reportVARIANT=wildtype/wildtype_000000/000000/generation_000000/000000/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/20210328.192759__KDName_EG10063_KDIndex_73_KDfact_1/geneKnockdown_000073/000000/generation_000000/000000/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/project/exportpath/wild_knd_1/
+
+Figure5 A: /newhome/wo20754/wholecell3/wcEcoli/out/project/exportpath/wild_knd_1/aaCounts.pdf
+
+python run.py /newhome/wo20754/wholecell3/wcEcoli/out/20210823.152009__wildtype_reportVARIANT=wildtype/wildtype_000000/000000/generation_000000/000001/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/20210328.192759__KDName_EG10063_KDIndex_73_KDfact_1/geneKnockdown_000073/000000/generation_000000/000001/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/project/exportpath/wild_knd_2/
+
+Figure5 B: /newhome/wo20754/wholecell3/wcEcoli/out/project/exportpath/wild_knd_2/aaCounts.pdf
+
+python run.py /newhome/wo20754/wholecell3/wcEcoli/out/20210823.152009__wildtype_reportVARIANT=wildtype/wildtype_000000/000000/generation_000000/000002/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/20210328.192759__KDName_EG10063_KDIndex_73_KDfact_1/geneKnockdown_000073/000000/generation_000000/000002/simOut/ \
+/newhome/wo20754/wholecell3/wcEcoli/out/project/exportpath/wild_knd_3/
+
+Figure5 C: /newhome/wo20754/wholecell3/wcEcoli/out/project/exportpath/wild_knd_3/aaCounts.pdf
+
+
+
+
+
+
+
+
+
+
